@@ -1,9 +1,9 @@
-<h1 align="center">BGA</h1>
+<h1 style="text-align: left;">SGP</h1>
 
 This repository contains code to reproduce results from the paper:
 
 
-BGA: Bidirectional Gradient for Adversarial Attack
+Boosting Adversarial Transferability Against Defenses via Multi-Scale Transformation
 
 
 ## Requirements
@@ -26,23 +26,22 @@ BGA: Bidirectional Gradient for Adversarial Attack
 You should download [data](https://drive.google.com/drive/folders/1CfobY6i8BfqfWPHL31FKFDipNjqWwAhS) and [models](https://drive.google.com/drive/folders/10cFNVEhLpCatwECA6SPB-2g0q5zZyfaw).  
 Place them in dev_data/ and models/, respectively.
 
-### BGA
+### SGP
 
-File bga_mi_fgsm.py and bsr_bga_mi.py generate adversarial examples on inception_v3 model.  
-File std_bga_ens.py generate adversarial examples on ensemble model.
+File SGP.py generate adversarial examples on inception_v3 model.  
 If you want to attack other models, replace the model in `graph` function and load such models in `main` function.
 
 #### Runing attack
 
-Taking BGA attack for example, you can run this attack as following:
+Taking SGP attack for example, you can run this attack as following:
 
 ```
-CUDA_VISIBLE_DEVICES=gpuid python bga_mi.py
+CUDA_VISIBLE_DEVICES=gpuid python SGP.py
 ```
 
 #### Evaluating the attack
 
-The generated adversarial examples would be stored in directory `./outputs_bga_mi`. Then run the file `simple_eval.py` to evaluate the success rate of each model used in the paper:
+The generated adversarial examples would be stored in directory `./outputs_SGP`. Then run the file `simple_eval.py` to evaluate the success rate of each model used in the paper:
 
 ```
 CUDA_VISIBLE_DEVICES=gpuid python simple_eval.py
@@ -50,5 +49,5 @@ CUDA_VISIBLE_DEVICES=gpuid python simple_eval.py
 
 ## Acknowledgments
 
-Codes refers to [SI-NI-FGSM](https://github.com/JHL-HUST/SI-NI-FGSM) and [BSR](https://github.com/Trustworthy-AI-Group/BSR)
+Codes refers to [SI-NI-FGSM](https://github.com/JHL-HUST/SI-NI-FGSM)
 
